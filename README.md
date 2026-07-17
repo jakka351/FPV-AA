@@ -4,9 +4,14 @@
 # FPV Android Auto
 The classic Ford Performance Vehicles gauges recreated for Android Auto...
 
+<img width="2400" height="1080" alt="image" src="https://github.com/user-attachments/assets/567f3821-220e-4a6a-812d-bf662fb1bf93" />
+
+
 You need to put Android Auto in developer mode and enable unknown sources.  
-  
+<img width="2400" height="1080" alt="image" src="https://github.com/user-attachments/assets/d7bb9439-ad4d-4412-a328-ec2d8e96db4e" />
+
 Simply install the apk file to your phone, pair an OBDX Pro FT device to your phone and connect it to the OBD2 port of the vehicle, and then run Android Auto. https://obdxpro.com/ Thanks to JasonACT for extracting the images from the firmware of the FDIM. Thanks also to https://github.com/borconi/obd2aa which formed the skeleton of this app, then ported to C# MAUI. Uses the OBDXMAUI library for vehicle comms via bluetooth classic.
+<img width="1200" height="540" alt="image" src="https://github.com/user-attachments/assets/66535e86-d9bb-4927-9ba0-36752b3ebb72" />
    
 <img width="800" height="480" alt="image" src="https://github.com/user-attachments/assets/77be18e9-d247-4be3-94b4-60d692abeb99" />
 
