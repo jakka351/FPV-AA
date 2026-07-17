@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FpvGauges.Pages.MainPage"
+             Title="FPV GT-F Gauges"
+             BackgroundColor="{StaticResource FpvDark}">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="12" RowSpacing="12">
+
+        <!-- Live cluster preview (identical rendering to the Android Auto surface) -->
+        <Border Grid.Row="0" Stroke="#22FFFFFF" StrokeThickness="1" BackgroundColor="#0A0D14"
+                StrokeShape="RoundRectangle 10">
+            <GraphicsView x:Name="Preview" HeightRequest="240" />
+        </Border>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="10">
+                <Label x:Name="StatusLabel" Text="Not connected" TextColor="{StaticResource FpvText}"
+                       FontFamily="OpenSansSemibold" FontSize="15" />
+                <Label x:Name="ToolLabel" Text="" TextColor="{StaticResource FpvMuted}" FontSize="12" />
+
+                <Label Text="Adapter log" TextColor="{StaticResource FpvMuted}" FontSize="12" Margin="0,6,0,0" />
+                <Border Stroke="#1AFFFFFF" StrokeThickness="1" BackgroundColor="#0A0D14" StrokeShape="RoundRectangle 8">
+                    <Editor x:Name="LogView" IsReadOnly="True" HeightRequest="150" FontSize="11"
+                            TextColor="#B8C0CC" BackgroundColor="Transparent" />
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <VerticalStackLayout Grid.Row="2" Spacing="8">
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                <Button x:Name="ConnectButton" Grid.Column="0" Text="Scan &amp; Connect" Clicked="OnConnectClicked" />
+                <Button x:Name="DemoButton" Grid.Column="1" Text="Demo" Clicked="OnDemoClicked"
+                        BackgroundColor="#2A2F3A" TextColor="{StaticResource FpvText}" />
+            </Grid>
+            <Button Text="Configure gauges" Clicked="OnConfigureClicked"
+                    BackgroundColor="#2A2F3A" TextColor="{StaticResource FpvText}" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

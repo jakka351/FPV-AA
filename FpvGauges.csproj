@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0-android</TargetFramework>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>FpvGauges</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+
+		<ApplicationTitle>FPV GT-F Gauges</ApplicationTitle>
+		<ApplicationId>com.fpv.gauges</ApplicationId>
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<!-- Car App Library needs a modern compile SDK; head units run modern platforms.
+		     TargetPlatformVersion is left to the .NET 9 Android default (API 35). -->
+		<SupportedOSPlatformVersion>29.0</SupportedOSPlatformVersion>
+
+		<!-- Make Debug a self-contained, directly-installable APK (no Fast Deployment),
+		     so a sideloaded build runs on a head-unit-connected phone without the IDE. -->
+		<EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<AndroidPackageFormat>apk</AndroidPackageFormat>
+		<AndroidLinkMode>SdkOnly</AndroidLinkMode>
+		<DebugSymbols>false</DebugSymbols>
+		<DebugType>none</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#0B0F1A" />
+		<!-- Native (OS) splash shown for the split second before our branded SplashPage. -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#000000" BaseSize="200,200" />
+
+		<MauiImage Include="Resources\Images\*" />
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw assets decoded at runtime: the exact 800x480 gauge face (surface renderer +
+		     phone preview) and the FPV splash image. LogicalName keeps the flat filename. -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.111" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" />
+	</ItemGroup>
+
+	<!-- Android Auto (Car App Library) bindings. -->
+	<ItemGroup Condition="$(TargetFramework.Contains('-android'))">
+		<PackageReference Include="Xamarin.AndroidX.Car.App.App" Version="1.7.0.2" />
+		<PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData.Core" Version="2.10.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Vendor OBDX Pro library (Scantool): Bluetooth/BLE/USB/WiFi transport to the OBDXPro FT. -->
+		<ProjectReference Include="..\OBDXMAUI\OBDXMAUI\OBDXMAUI.csproj" />
+	</ItemGroup>
+
+</Project>

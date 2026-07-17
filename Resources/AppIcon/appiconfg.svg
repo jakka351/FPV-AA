@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="456" height="456" viewBox="0 0 456 456" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simplified gauge badge: silver ring + orange sweep + needle -->
+  <circle cx="228" cy="228" r="120" fill="#12161f" stroke="#C8CDD4" stroke-width="14"/>
+  <path d="M228 228 m0 -104 a104 104 0 0 1 90 52" fill="none" stroke="#F26722" stroke-width="12" stroke-linecap="round"/>
+  <g stroke="#EAECEF" stroke-width="8" stroke-linecap="round">
+    <line x1="228" y1="228" x2="176" y2="300"/>
+  </g>
+  <circle cx="228" cy="228" r="18" fill="#1b1f28" stroke="#C8CDD4" stroke-width="6"/>
+  <text x="228" y="360" font-family="Arial, sans-serif" font-size="46" font-weight="bold" fill="#EAECEF" text-anchor="middle">FPV</text>
+</svg>

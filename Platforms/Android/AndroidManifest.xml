@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+	<!-- Android Auto template + surface access (this is a navigation-category car app
+	     that draws the FPV gauges straight onto the head-unit surface). -->
+	<uses-permission android:name="androidx.car.app.NAVIGATION_TEMPLATES" />
+	<uses-permission android:name="androidx.car.app.ACCESS_SURFACE" />
+
+	<!-- OBDX Pro FT transport (Bluetooth classic + BLE). -->
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	<uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation" />
+	<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+
+	<!-- Keep the OBD poll loop alive on the head unit even with the phone screen off. -->
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+	<uses-feature android:name="android.hardware.bluetooth" android:required="false" />
+	<uses-feature android:name="android.hardware.bluetooth_le" android:required="false" />
+	<uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
+
+	<application android:allowBackup="true"
+	             android:icon="@mipmap/appicon"
+	             android:roundIcon="@mipmap/appicon_round"
+	             android:supportsRtl="true">
+
+		<!-- Android Auto registration. The CarAppService itself is declared by the
+		     [Service]/[IntentFilter] attributes on FpvCarAppService. -->
+		<meta-data android:name="com.google.android.gms.car.application"
+		           android:resource="@xml/automotive_app_desc"
+		           tools:ignore="MetadataTagInsideApplicationTag" />
+		<meta-data android:name="androidx.car.app.minCarApiLevel"
+		           android:value="1"
+		           tools:ignore="MetadataTagInsideApplicationTag" />
+	</application>
+</manifest>

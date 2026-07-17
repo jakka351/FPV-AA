@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FpvGauges.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="FpvOrange">#FF6A1A</Color>
+            <Color x:Key="FpvDark">#0B0F1A</Color>
+            <Color x:Key="FpvSlate">#141821</Color>
+            <Color x:Key="FpvText">#EAECEF</Color>
+            <Color x:Key="FpvMuted">#9AA0A6</Color>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource FpvOrange}" />
+                <Setter Property="TextColor" Value="#101010" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="HeightRequest" Value="48" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

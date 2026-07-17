@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FpvGauges.Pages.SplashPage"
+             BackgroundColor="#000000"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <Image x:Name="Splash"
+               Source="fpv_splash.jpg"
+               Aspect="AspectFill"
+               Opacity="0" />
+
+        <VerticalStackLayout VerticalOptions="End" HorizontalOptions="Center" Spacing="6" Padding="0,0,0,40">
+            <Label x:Name="Title"
+                   Text="GT-F GAUGES"
+                   TextColor="#FFFFFF"
+                   FontFamily="OpenSansSemibold"
+                   FontSize="18"
+                   Opacity="0"
+                   HorizontalTextAlignment="Center" />
+            <Label x:Name="Status"
+                   Text="Starting…"
+                   TextColor="#C8CDD4"
+                   FontSize="12"
+                   Opacity="0"
+                   HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

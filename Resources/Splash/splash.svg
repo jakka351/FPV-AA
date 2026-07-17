@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="80" fill="#0B0F1A" stroke="#C8CDD4" stroke-width="8"/>
+  <path d="M100 100 m0 -66 a66 66 0 0 1 57 33" fill="none" stroke="#F26722" stroke-width="8" stroke-linecap="round"/>
+  <text x="100" y="118" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#EAECEF" text-anchor="middle">FPV</text>
+</svg>
